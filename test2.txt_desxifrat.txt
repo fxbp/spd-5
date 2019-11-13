@@ -1,0 +1,1 @@
+A user of RSA creates and then publishes a public key based on two large prime numbers. 

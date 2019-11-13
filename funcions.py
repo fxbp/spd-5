@@ -1,6 +1,6 @@
 import random
 
-primes = [2,3,5,7,11, 13, 17, 19, 23, 29] # 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+primes = [2,3,5,7,11,13,17,19,23,29] # 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
 
 def potencia_modular_eficient(base, expo, p):
 # p>1
@@ -30,8 +30,8 @@ def fermat_primalitat(n):
     return True
 
 
-def get_prime_number(nbits):
-    test_number =random.getrandbits(nbits)
+def troba_primer(nbits):
+    test_number = random.getrandbits(nbits)
     while(not fermat_primalitat(test_number)):
         test_number +=1
     return test_number

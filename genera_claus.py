@@ -2,13 +2,12 @@ from funcions import *
 import sys
 
 nbits = 1024
-e_nbits= 256
 
-def xifrat_rsa():
+def genera_claus():
 
     #Pas 3: obtenir 2 nobmres primers grans, no gaire diferents, pero no propers entre ells
-    p = get_prime_number(nbits)
-    q = get_prime_number(nbits+7)
+    p = troba_primer(nbits)
+    q = troba_primer(nbits+7)
 
     print("El primer nombre primer és:")
     print(p);
@@ -29,9 +28,9 @@ def xifrat_rsa():
     print(phi_n)
 
     #Pas 4: Obtenim una e < phi(n) i coprimer amb phi(n)
-    e = random.getrandbits(e_nbits)
+    e = random.getrandbits(nbits)
     while(mcd_euclides(phi_n,e) != 1):
-        e = random.getrandbits(e_nbits)
+        e = random.getrandbits(nbits)
     print("Exponent public: ")
     print(e)
 
@@ -41,5 +40,7 @@ def xifrat_rsa():
     print("Exponent de desxifrat: ")
     print(d)
 
+    return n, e, d, p, q
+
 sys.setrecursionlimit(5000)
-xifrat_rsa()
+genera_claus()

@@ -1,3 +1,4 @@
+# encoding: utf-8
 from genera_claus import genera_claus
 from funcions import *
 import sys
@@ -12,7 +13,7 @@ def obtenir_bytes(enter):
 
 def codifica(fitxer_original, fitxer_codificat, e, n):
     bytes = open(fitxer_original, 'rb').read()
-    enter_pla =int.from_bytes(bytes,byteorder='big')
+    enter_pla = int.from_bytes(bytes,byteorder='big')
     ## codifiquem l'enter amb la clau publica que s'ha obtingut
     codificat = potencia_modular_eficient(enter_pla,e,n)
     open(fitxer_codificat, 'w').write(str(codificat))

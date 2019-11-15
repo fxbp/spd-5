@@ -1,5 +1,6 @@
 # encoding: utf-8
 import random
+import math
 
 primes = [2,3,5,7,11,13,17,19,23,29] # 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
 
@@ -79,3 +80,18 @@ def invers_modular(k,n):
         False, k
     else:
         return True, (r % n)
+
+def factors_primers(nombre):
+    llista_fp = []
+    if nombre >= 2:
+        d = 2
+        while d <= math.sqrt(nombre):
+            if nombre % d == 0:
+                llista_fp.append(d)
+                nombre = nombre / d
+            else:
+                d = d+1
+
+        llista_fp.append(int(nombre))
+
+    return llista_fp
